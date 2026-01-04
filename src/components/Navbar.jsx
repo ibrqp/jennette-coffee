@@ -4,36 +4,54 @@ import { FaRegUser } from "react-icons/fa";
 import { MdMenu } from "react-icons/md";
 import { NavbarData } from "../data/mockData";
 
-
 const Navbar = () => {
     return (
-        <nav className='py-5'>
-            <div className='container flex mx-auto justify-between items-center'>
-                {/* Logo Section */}
-                <div className='flex items-center gap-2 text-3xl font-semibold'>
-                    <FiCoffee />
-                    Jennete Cafe</div>
-                {/* Menu Section */}
-                <div className='hidden md:block'>
-                    <ul className='flex items-center gap-4'>
+        <nav className="py-5">
+            <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
+
+                {/* Logo */}
+                <div className="flex items-center gap-2 text-2xl font-semibold select-none">
+                    <FiCoffee className="text-3xl" />
+                    <span>Jennete Cafe</span>
+                </div>
+
+                {/* Menu Desktop */}
+                <div className="hidden md:flex items-center gap-6">
+                    <ul className="flex items-center gap-2">
                         {NavbarData.map((item) => (
                             <li key={item.id}>
-                                <a href={item.link} className='inline-text-base py-2
-                                 px-3 uppercase cursor-pointer'>{item.title}</a>
-
+                                <a
+                                    href={item.link}
+                                    className="
+                                        text-base
+                                        px-3
+                                        py-2
+                                        uppercase
+                                        tracking-wide
+                                        hover:text-white/80
+                                        transition
+                                    "
+                                >
+                                    {item.title}
+                                </a>
                             </li>
                         ))}
-                        <button className='text-xl ps-14'>
-                            <FaRegUser />
-                        </button>
                     </ul>
+
+                    {/* User Icon */}
+                    <button className="text-xl hover:scale-105 transition">
+                        <FaRegUser />
+                    </button>
                 </div>
-                {/* Hamburger menu */}
+
+                {/* Mobile Menu */}
                 <div className="md:hidden">
-                    <MdMenu className="text-4xl" />
+                    <MdMenu className="text-4xl cursor-pointer" />
                 </div>
+
             </div>
-        </nav>)
+        </nav>
+    )
 }
 
 export default Navbar

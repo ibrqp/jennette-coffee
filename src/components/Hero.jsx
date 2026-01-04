@@ -34,9 +34,9 @@ const Hero = () => {
             className="text-white"
         >   
         <Navbar/>
-            <div className='container grid grid-cols-1 mx-auto md:grid-cols-2 h-screen md:h-[700px] relative'>
+            <div className='container grid grid-cols-1 mx-auto md:grid-cols-2 h-screen md:relative'>
                 {/* LEFT SIDE */}
-                <div className='flex flex-col justify-center py-14 md:py-0 xl:max-w-[500px] order-2 md:order-1'>
+                <div className='flex flex-col justify-center py-14 md:py-0 xl:max-w-[500px] order-2 md:order-1 pointer-events-none'>
                     <div className='space-y-5 md:space-y-7 text-center md:text-left'>
 
                         {/* title */}
